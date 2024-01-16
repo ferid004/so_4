@@ -7,6 +7,7 @@ import Home from './page/home'
 import Add from './page/add'
 import Wish from './page/wish'
 import Detail from './page/detail'
+import { WishProvider } from './context/wishContext';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
     <>
       <HelmetProvider>
 
+<WishProvider>
 
         <BrowserRouter>
           <Routes>
@@ -25,7 +27,10 @@ function App() {
               <Route element={<Detail></Detail>} path='/detail/:id'></Route>
             </Route>
           </Routes>
+
         </BrowserRouter>
+</WishProvider>
+
       </HelmetProvider>
     </>
   )

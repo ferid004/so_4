@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import './index.scss'
+import { useWish } from '../../context/wishContext'
 
 function Product() {
+     const[wish, setWish,handlewish]=useWish()
+    
+    
     const [product, setProduct] = useState([])
+    
     const axiosAll=async()=>{
         const res=await axios.get('http://localhost:3000/')
         const data=res.data.data
@@ -18,8 +24,9 @@ function Product() {
         {product&& product.map((item)=>(
             <ul key={item._id}>
                 <li>{item.name}</li>
-                <li><img src={item.src} alt="" /></li>
+                <li><div className='imgbox'><img src={item.src} alt="" /></div></li>
                 <li>{item.ifno}</li>
+                <li><button onClick={()=>handlewish(item)}>wish</button></li>
             </ul>
         ))}
     </div>
