@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import '../src/assets/sass/main.scss'
 import MainLayout from './layout/mainLayout'
 import Home from './page/home'
@@ -12,16 +13,20 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<MainLayout></MainLayout>} path='/'>
-            <Route element={<Home></Home>}index></Route>
-            <Route element={<Add></Add>}path='/add'></Route>
-            <Route element={<Wish></Wish>}path='/wish'></Route>
-            <Route element={<Detail></Detail>}path='/detail/:id'></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <HelmetProvider>
+
+
+        <BrowserRouter>
+          <Routes>
+            <Route element={<MainLayout></MainLayout>} path='/'>
+              <Route element={<Home></Home>} index></Route>
+              <Route element={<Add></Add>} path='/add'></Route>
+              <Route element={<Wish></Wish>} path='/wish'></Route>
+              <Route element={<Detail></Detail>} path='/detail/:id'></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
     </>
   )
 }
