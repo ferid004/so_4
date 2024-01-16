@@ -39,13 +39,14 @@ function Add() {
       </Helmet>
       <>
         <Formik
-          initialValues={{ name: '', src: '', info: '' }}
+          initialValues={{ name: '', src: '', info: '',price:'' }}
           validationSchema={Yup.object({
             name: Yup.string()
               .required('Required'),
             src: Yup.string()
               .required('Required'),
             info: Yup.string().required('Required'),
+            price:Yup.string()
           })}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             axiosPost(values)
@@ -66,6 +67,9 @@ function Add() {
             <Field name="info" type="text" />
             <ErrorMessage name="info" />
 
+            <Field name="price" type="number" />
+            <ErrorMessage name="price" />
+
             <button type="submit">Submit</button>
           </Form>
         </Formik>
@@ -78,6 +82,8 @@ function Add() {
         <br />
         <button onClick={()=>setSort({prop:"name",asc:true})}>a-z</button>
         <button onClick={()=>setSort({prop:"name",asc:false})}>z-a</button>
+        <button onClick={()=>setSort({prop:"price",asc:true})}>artan</button>
+        <button onClick={()=>setSort({prop:"price",asc:false})}>azalan</button>
         <button onClick={()=>setSort(null)}>default</button>
         <br />
         <br />
@@ -87,6 +93,7 @@ function Add() {
               <th>name</th>
               <th>src</th>
               <th>info</th>
+              <th>price</th>
               <th>delete</th>
             </tr>
           </thead>
@@ -107,6 +114,7 @@ function Add() {
                 <td>{item.name}</td>
                 <td><div className="imgbox"><img src={item.src} alt="" /></div></td>
                 <td>{item.info}</td>
+                <td>{item.price}</td>
                 <td onClick={() => axiosDelete(item._id)}>
                   <button>delete</button>
                 </td>

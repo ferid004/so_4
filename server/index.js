@@ -11,6 +11,7 @@ const proSchema = new mongoose.Schema({
     name: String,
     src:String,
     info:String,
+    price:Number,
   });
 
   const Product = mongoose.model('prduct017', proSchema);

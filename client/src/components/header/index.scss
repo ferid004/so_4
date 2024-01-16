@@ -1,0 +1,82 @@
+#header {
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://preview.colorlib.com/theme/educature/img/header-bg.png');
+
+    .container {
+        height: 100%;
+        flex-direction: column;
+        color: white;
+
+        h1 {
+            padding: 20px;
+        }
+
+        p {
+            padding: 20px;
+        }
+
+        .inputd {
+            padding: 20px;
+
+            max-width: 500px;
+            min-width: 300px;
+            width: 90%;
+            background-color: white;
+            display: flex;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+
+            input {
+                all: unset;
+                color: black;
+
+                width: 80%;
+            }
+
+            button {
+                all: unset;
+                cursor: pointer;
+                color: black;
+                background: rgb(62, 55, 176);
+                background: linear-gradient(90deg, rgba(62, 55, 176, 1) 0%, rgba(9, 9, 121, 1) 47%, rgba(0, 212, 255, 1) 100%);
+                border: 1px solid black;
+                padding: 5px;
+            }
+        }
+        .top{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            .up{
+                font-size: 25px;
+            }
+            .bigbox{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 480px;
+                min-width: 280px;
+            width: 90%;
+                margin-bottom: 60px;
+                .box{
+                    margin: 15px;
+                    padding: 10px;
+                    border:1px solid white;
+                    &:hover{
+                        transition: 0.5s;
+                        color: black;
+                        background-color: white;
+                    }
+                }
+                
+            }
+        }
+    }
+}

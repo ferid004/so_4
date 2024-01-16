@@ -1,0 +1,96 @@
+#navbar {
+    min-height: 72px;
+    height: 72px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    left: 0;
+    .mobil{
+        display: none;
+    }
+    .dev {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        max-width: 1000px;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+        
+        .title {
+            padding: 5px;
+            width: 110px;
+            height: 50px;
+
+        }
+
+        .links {
+            display: flex;
+            gap: 10px;
+            padding: 5px;
+            .navlik{
+                padding: 10px;
+                color: white !important;
+            }
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .dev {
+          display: none;
+        }
+        .mobil {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            max-width: 1000px;
+            margin: auto;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            
+            .title {
+                padding: 5px;
+                width: 110px;
+                height: 50px;
+                
+    
+            }
+
+            .icon{
+                font-size: 30px;
+                margin-right: 20px;
+                color: white;
+            }
+    
+            .links {
+                display: flex;
+                gap: 10px;
+                padding: 5px;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                background-color: black;
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .navlik{
+                    padding: 10px;
+                    color: white !important;
+                }
+            }
+            .block{
+                display: none;
+            }
+        }
+
+
+      }
+}
+
+
+.active{
+    
+    background-color: rgb(171, 236, 236);
+    color: black !important;
+}
